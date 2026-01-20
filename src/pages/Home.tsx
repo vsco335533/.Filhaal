@@ -35,10 +35,10 @@ export function Home() {
   // Manual book image sources.
   // You can set these to your image paths directly (or edit the <img src=.../> lines below).
   // Examples: '/src/assets/books/Book1.webp' or new URL(import.meta.url) style imports.
-  const BOOK1_SRC = '/src/assets/Book1.webp';
-  const BOOK2_SRC = '/src/assets/Book2.webp';
-  const BOOK3_SRC = '/src/assets/Book3.webp';
-  const BOOK4_SRC = '/src/assets/Book4.webp';
+  const BOOK1_SRC = '/assets/Book1.webp';
+  const BOOK2_SRC = '/assets/Book2.webp';
+  const BOOK3_SRC = '/assets/Book3.webp';
+  const BOOK4_SRC = '/assets/Book4.webp';
 
   return (
     <div className="min-h-screen bg-blue-50">  
