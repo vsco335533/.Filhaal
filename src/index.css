@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
