@@ -67,7 +67,7 @@
 
 // src/lib/api.ts
 // Base URL comes from .env (VITE_API_URL=http://localhost:5000/api)
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_BASE = import.meta.env.VITE_API_URL || "https://filhaal.onrender.com";
 
 /**
  * Get token from localStorage (so refresh keeps you signed in)
