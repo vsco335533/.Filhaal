@@ -378,11 +378,25 @@ export function Gallery() {
 
                       let categoryId = selectedCategory;
                       if (newCategory && newCategory.trim()) {
-                        // create new image category
-                        const res = await apiPost('/image-categories', { name: newCategory.trim(), description: '' });
-                        categoryId = res?.category?.id;
-                        // update local list
-                        if (res?.category) setCategoriesList((s) => [res.category, ...s]);
+                        // create new image category (or use existing if it already exists)
+                        try {
+                          const res = await apiPost('/image-categories', { name: newCategory.trim(), description: '' });
+                          categoryId = res?.category?.id;
+                          // update local list
+                          if (res?.category) setCategoriesList((s) => [res.category, ...s]);
+                        } catch (err: any) {
+                          // If category already exists (409), try to fetch it from the categories list
+                          const existingCategory = categoriesList.find(
+                            (cat) => cat.name.toLowerCase() === newCategory.trim().toLowerCase()
+                          );
+                          if (existingCategory) {
+                            categoryId = existingCategory.id;
+                            console.log('Using existing category:', existingCategory);
+                          } else {
+                            // Re-throw if it's not a 409 or we can't find the category
+                            throw err;
+                          }
+                        }
                       }
 
                       const token = localStorage.getItem('token');
@@ -395,7 +409,7 @@ export function Gallery() {
                       formData.append('type', 'image');
                       if (categoryId) formData.append('image_category_id', categoryId);
 
-                      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/media/upload`, {
+                      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/media/upload`, {
                         method: 'POST',
                         headers: {
                           Authorization: `Bearer ${token}`,
