@@ -45,7 +45,7 @@ export function WriteInFilhaal() {
 
       <p className="text-gray-700 mb-4">Share your feedback, a letter, or an article proposal specifically for Filhaal. Submissions are reviewed by the editorial team. Admins can view submissions from the admin panel.</p>
 
-      <form ref={formRef} onSubmit={onSubmit} className="bg-white border rounded p-6 space-y-4">
+      <form ref={formRef} onSubmit={onSubmit} className="bg-violet-50 border rounded p-6 space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">Your name</label>
           <input value={name} onChange={(e) => setName(e.target.value)} className="mt-1 block w-full border rounded px-3 py-2" />
