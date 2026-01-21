@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Eye, TrendingUp } from "lucide-react";
 import { apiGet } from "../lib/api";
 import { PostWithAuthor } from "../types";
+import Book1 from "../assets/Book1.webp";
+import Book2 from "../assets/Book2.webp";
+import Book3 from "../assets/Book3.webp";
+import Book4 from "../assets/Book4.webp";
 
 export function Home() {
   const [latestPosts, setLatestPosts] = useState<PostWithAuthor[]>([]);
@@ -33,12 +37,11 @@ export function Home() {
   };
 
   // Manual book image sources.
-  // You can set these to your image paths directly (or edit the <img src=.../> lines below).
-  // Examples: '/src/assets/books/Book1.webp' or new URL(import.meta.url) style imports.
-  const BOOK1_SRC = '/assets/Book1.webp';
-  const BOOK2_SRC = '/assets/Book2.webp';
-  const BOOK3_SRC = '/assets/Book3.webp';
-  const BOOK4_SRC = '/assets/Book4.webp';
+  // Using imported image modules for proper bundling in Vite
+  const BOOK1_SRC = Book1;
+  const BOOK2_SRC = Book2;
+  const BOOK3_SRC = Book3;
+  const BOOK4_SRC = Book4;
 
   return (
     <div className="min-h-screen bg-blue-50">  
