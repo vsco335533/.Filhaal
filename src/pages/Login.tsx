@@ -107,8 +107,8 @@ export function Login() {
           </form>
 
           <div className="mt-6 text-center text-sm text-gray-600">
-            <p>Demo Credentials:</p>
-            <p className="text-xs text-gray-500 mt-1">Admin: admin@example.com / password</p>
+            <p>-</p>
+            <p className="text-xs text-gray-500 mt-1">Admin</p>
             {/* <p className="text-xs text-gray-500">Researcher: researcher@example.com / password</p> */}
           </div>
         </div>
