@@ -200,7 +200,7 @@ export function Home() {
         <aside className="lg:col-span-3 order-3">
           <h3 className="text-lg font-semibold mb-4">Videos</h3>
           <div className="space-y-4">
-            {["0M4qtvjYft8","IzgSW-Lid_M","qhUeh5Sy-q4"].map((id) => (
+            {["47QozCV_vuQ","23izOc1SP3w","IgGN2SJovfM"].map((id) => (
               <div key={id} className="bg-white border rounded-lg overflow-hidden">
                 <iframe
                   title={id}
